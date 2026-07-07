@@ -1,16 +1,12 @@
 'use client';
 
-import { useState } from 'react';
 import Navbar from '@/components/Navbar';
-import Hero from '@/components/Hero';
-import BentoAbout from '@/components/BentoAbout';
 import Projects from '@/components/Projects';
-import Skills from '@/components/Skills';
-import Parcours from '@/components/Parcours';
-import ContactModal from '@/components/ContactModal';
 import Footer from '@/components/Footer';
+import ContactModal from '@/components/ContactModal';
+import { useState } from 'react';
 
-export default function Home() {
+export default function ProjectsPage() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
   const handleContactClick = () => {
@@ -24,11 +20,12 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-[#05050f] text-white">
       <Navbar onContactClick={handleContactClick} />
-      <Hero />
-      <BentoAbout />
-      <Projects />
-      <Skills />
-      <Parcours />
+      <section className="py-24 px-6">
+        <div className="max-w-7xl mx-auto">
+          <h1 className="text-5xl font-bold mb-8">Tous les projets</h1>
+          <Projects />
+        </div>
+      </section>
       <ContactModal isOpen={isContactOpen} onClose={handleCloseContact} />
       <Footer />
     </main>
