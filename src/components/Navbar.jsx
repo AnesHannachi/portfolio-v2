@@ -27,10 +27,10 @@ export default function Navbar({ onContactClick }) {
         isScrolled ? 'glass' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between ">
         {/* Logo */}
         <Link href="/" className="font-mono text-lg font-bold gradient-text">
-          anes.dev
+          anes
         </Link>
 
         {/* Desktop Navigation */}
@@ -53,7 +53,7 @@ export default function Navbar({ onContactClick }) {
           ))}
         </div>
 
-        {/* Mobile Menu Button */}
+       {/* Mobile Menu Button */}
         <button
           className="md:hidden text-[#e2e8f0] hover:text-[#3B82F6] transition-colors"
           onClick={() => setIsOpen(!isOpen)}
