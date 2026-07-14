@@ -1,5 +1,7 @@
 'use client';
 
+import Image from 'next/image';
+
 export default function Hero() {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden bg-[#05050f]">
@@ -34,7 +36,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl leading-tight mb-8">
-              <span className="gradient-text ">
+              <span className="gradient-text font-bold  ">
                 Transformer les idées en<br />
                 Expériences Utilisateur.
               </span>
@@ -51,27 +53,36 @@ export default function Hero() {
             </a>
           </div>
 
-          {/* Right: Photo Placeholder */}
+          {/* Right: Photo Card */}
           <div className="flex justify-center md:justify-end">
             <div className="relative">
               {/* Glow ring */}
               <div
-                className="absolute inset-0 rounded-full pointer-events-none"
+                className="absolute rounded-full pointer-events-none animate-pulse-glow"
                 style={{
-                  background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, transparent 70%)',
-                  width: '160px',
-                  height: '160px',
-                  left: '50%',
-                  top: '50%',
-                  transform: 'translate(-50%, -50%)',
+                  background: 'radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, transparent 70%)',
+                  width: '140%',
+                  height: '140%',
+                  left: '-20%',
+                  top: '-20%',
                   zIndex: -1,
                 }}
               />
-              {/* Photo card */}
-              <div className="w-40 h-40 rounded-full border-2 border-blue-500 bg-gray-900 flex items-center justify-center">
-                <div className="text-center text-gray-500">
-                  <div className="text-3xl mb-2">📷</div>
-                  <p className="text-xs">[photo]</p>
+              {/* Photo card with Pop-out & Float Effect */}
+              <div className="relative w-48 h-52 md:w-64 md:h-72 flex items-end justify-center animate-float">
+                {/* The Circle Background & Border */}
+                <div className="absolute bottom-0 w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-blue-500 bg-gray-900/80 backdrop-blur-sm shadow-[0_0_50px_rgba(59,130,246,0.15)] hover:border-purple-500 transition-colors duration-500" />
+                
+                {/* The Image (pops out at the top, clipped at the bottom) */}
+                <div className="relative w-48 h-52 md:w-64 md:h-72 overflow-hidden rounded-b-full flex items-end justify-center">
+                  <Image
+                    src="/aneshannachi.png"
+                    alt="Anes Hannachi"
+                    width={256}
+                    height={288}
+                    className="object-cover object-top w-full h-full transform scale-110 transition-all duration-300 hover: origin-bottom filter drop-shadow-[0_10px_20px_rgba(0,0,0,0.5)]"
+                    priority
+                  />
                 </div>
               </div>
             </div>
