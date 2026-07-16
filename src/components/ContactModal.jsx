@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function ContactModal({ isOpen, onClose }) {
   const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
@@ -127,8 +128,14 @@ export default function ContactModal({ isOpen, onClose }) {
               />
             </div>
 
-            <button type="submit" className="w-full btn-primary flex items-center justify-center gap-2">
-              Envoyer →
+            <button type="submit" className="group w-full btn-primary flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-6 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+              <span>Envoyer</span>
+              <span className="inline-flex items-center justify-center w-6 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
+              </span>
             </button>
           </form>
 

@@ -1,5 +1,7 @@
 'use client';
 
+import { ArrowUpRight } from 'lucide-react';
+
 const projectData = {
   esiflow: {
     title: 'ESIFLOW',
@@ -71,8 +73,14 @@ export default function ProjectDetail({ slug }) {
       <div className="min-h-screen pt-32 px-6 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl font-bold text-[#e2e8f0] mb-4">Projet non trouvé</h1>
-          <a href="/#projects" className="btn-primary">
-            ← Retour aux projets
+          <a href="/#projects" className="group btn-primary inline-flex items-center justify-center">
+            <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+              <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+            </span>
+            <span>Retour aux projets</span>
+            <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+              <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+            </span>
           </a>
         </div>
       </div>
@@ -83,8 +91,14 @@ export default function ProjectDetail({ slug }) {
     <div className="min-h-screen py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-4xl mx-auto">
         {/* Back Link */}
-        <a href="/#projects" className="inline-flex items-center gap-2 text-[#3B82F6] hover:text-[#2563EB] transition-colors mb-8">
-          ← Retour aux projets
+        <a href="/#projects" className="group inline-flex items-center text-[#3B82F6] hover:text-[#2563EB] transition-colors mb-8">
+          <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+            <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+          </span>
+          <span>Retour aux projets</span>
+          <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+            <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+          </span>
         </a>
 
         {/* Hero Section */}
@@ -186,9 +200,15 @@ export default function ProjectDetail({ slug }) {
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn-primary w-full text-center justify-center"
+                  className="group btn-primary w-full text-center justify-center inline-flex items-center"
                 >
-                  Voir sur GitHub →
+                  <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+                    <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+                  </span>
+                  <span>Voir sur GitHub</span>
+                  <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+                    <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+                  </span>
                 </a>
               </div>
 

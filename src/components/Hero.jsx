@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { ArrowUpRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -48,8 +49,14 @@ export default function Hero() {
             </p>
 
             {/* CTA Button */}
-            <a href="#projects" className="btn-primary inline-block ">
-              Voir mes projets →
+            <a href="#projects" className="group btn-primary inline-flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-6 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
+              </span>
+              <span>Voir mes projets</span>
+              <span className="inline-flex items-center justify-center w-6 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-5 h-5" strokeWidth={2.5} />
+              </span>
             </a>
           </div>
 
@@ -72,7 +79,7 @@ export default function Hero() {
               <div className="relative w-48 h-52 md:w-64 md:h-72 flex items-end justify-center animate-float">
                 {/* The Circle Background & Border */}
                 <div className="absolute bottom-0 w-48 h-48 md:w-64 md:h-64 rounded-full border-2 border-blue-500 bg-gray-900/80 backdrop-blur-sm shadow-[0_0_50px_rgba(59,130,246,0.15)] hover:border-purple-500 transition-colors duration-500" />
-                
+
                 {/* The Image (pops out at the top, clipped at the bottom) */}
                 <div className="relative w-48 h-52 md:w-64 md:h-72 overflow-hidden rounded-b-full flex items-end justify-center">
                   <Image

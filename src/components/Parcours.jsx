@@ -9,6 +9,11 @@ const timelineEvents = [
     title: 'Cycle Ingénieur Informatique',
     description: 'École Nationale Supérieure d\'Informatique (ESI), Alger. 1ère année cycle ingénieur en cours.',
   },
+  {
+    date: '2023',
+    title: 'Baccalauréat',
+    description: 'Lycée Smain Haroune, Koléa. Mention: Très Bien.',
+  },
 ];
 
 export default function Parcours() {
