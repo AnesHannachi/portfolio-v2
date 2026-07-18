@@ -1,17 +1,19 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 
 export default function Navbar({ onContactClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
-  if (typeof window !== 'undefined') {
-    window.addEventListener('scroll', () => {
-      setIsScrolled(window.scrollY > 50);
-    });
-  }
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const navLinks = [
     { label: 'À propos', href: '#about' },
@@ -24,13 +26,15 @@ export default function Navbar({ onContactClick }) {
   return (
     <nav
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        isScrolled ? 'glass' : 'bg-transparent'
+        isScrolled 
+          ? 'bg-[#05050f]/80 backdrop-blur-md border-b border-white/10 shadow-sm' 
+          : 'bg-transparent border-b border-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between ">
         {/* Logo */}
         <Link href="/" className="font-mono text-lg font-bold gradient-text">
-          anes
+          anes.dev
         </Link>
 
         {/* Desktop Navigation */}

@@ -36,9 +36,9 @@ export default function BentoAbout() {
           <div className="glass rounded-2xl p-6">
             <p className="text-sm text-gray-400 mb-4">Tech enthusiast avec une passion pour le développement</p>
             <code className="text-xs text-blue-400 whitespace-pre-wrap">
-              const anes = {'{'}<br/>
-              {'  '}role: "dev",<br/>
-              {'  '}passion: "UI/UX"<br/>
+              const anes = {'{'}<br />
+              {'  '}role: "dev",<br />
+              {'  '}passion: "UI/UX"<br />
               {'}'}
             </code>
           </div>
@@ -60,7 +60,7 @@ export default function BentoAbout() {
 
           {/* Card 6: CTA card */}
           <div className="glass rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-            <p className="text-sm text-gray-400 mb-4">Vous voulez démarrer<br/>un projet ensemble ?</p>
+            <p className="text-sm text-gray-400 mb-4">Vous voulez démarrer<br />un projet ensemble ?</p>
             <a href="#contact" className="group btn-primary text-sm inline-flex items-center justify-center">
               <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
