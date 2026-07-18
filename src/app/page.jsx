@@ -13,23 +13,15 @@ import Footer from '@/components/Footer';
 export default function Home() {
   const [isContactOpen, setIsContactOpen] = useState(false);
 
-  const handleContactClick = () => {
-    setIsContactOpen(true);
-  };
-
-  const handleCloseContact = () => {
-    setIsContactOpen(false);
-  };
-
   return (
     <main className="min-h-screen bg-[#05050f] text-white">
-      <Navbar onContactClick={handleContactClick} />
+      <Navbar onContactClick={() => setIsContactOpen(true)} />
       <Hero />
-      <About />
+      <About onContactClick={() => setIsContactOpen(true)} />
       <Projects />
       <Skills />
       <Parcours />
-      <ContactModal isOpen={isContactOpen} onClose={handleCloseContact} />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <Footer />
     </main>
   );

@@ -1,6 +1,6 @@
 import { ArrowUpRight } from 'lucide-react';
 
-export default function About() {
+export default function About({ onContactClick }) {
   return (
     <section id="about" className="py-24 px-6 bg-[#05050f]">
       <div className="max-w-7xl mx-auto">
@@ -13,11 +13,7 @@ export default function About() {
           <div className="md:col-span-2 glass rounded-2xl p-8 flex flex-col md:flex-row gap-8 items-center md:items-start">
             {/* Photo */}
             <div className="w-full max-w-[200px] aspect-3/4 rounded-xl bg-[#0f0f23] border-2 border-[#1e1e3f] flex items-center justify-center shrink-0">
-              <span className="text-muted text-center">
-                <div className="text-4xl mb-2">📷</div>
-                <p className="text-sm">[image portfolio]</p>
-                <p className="text-xs text-[#64748b] mt-1">300x400px</p>
-              </span>
+              <img src="/aneshannachi.png" alt="Anes Hannachi" className="w-full h-full object-cover" />
             </div>
             {/* Bio text and Languages */}
             <div className="flex-1 space-y-6">
@@ -115,17 +111,22 @@ export default function About() {
 
           {/* Card 6: CTA card */}
           <div className="glass rounded-2xl p-6 flex flex-col justify-center items-center text-center">
-            <p className="text-sm text-gray-400 mb-4">Vous voulez démarrer<br />un projet ensemble ?</p>
-            <a href="#contact" className="group btn-primary text-sm inline-flex items-center justify-center">
-              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
-                <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-              </span>
-              <span>Contactez-moi</span>
-              <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
-                <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-              </span>
-            </a>
-          </div>
+  <p className="text-sm text-gray-400 mb-4">
+    Vous voulez démarrer<br />un projet ensemble ?
+  </p>
+  <button
+    onClick={onContactClick}
+    className="group btn-primary text-sm inline-flex items-center justify-center"
+  >
+    <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+    <span>Contactez-moi</span>
+    <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+  </button>
+</div>
         </div>
       </div>
     </section>
