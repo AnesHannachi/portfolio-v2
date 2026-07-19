@@ -26,7 +26,7 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-4xl mx-auto w-full relative z-10">
+      <div className="max-w-6xl mx-auto w-full relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left: Text */}
           <div>

@@ -7,6 +7,7 @@ import {
   FaGitAlt,
   FaGithub,
   FaDatabase,
+  FaCss3Alt,
 } from 'react-icons/fa';
 import {
   SiNextdotjs,
@@ -18,10 +19,16 @@ import {
   SiFigma,
   SiJavascript,
   SiHtml5,
+  
 } from 'react-icons/si';
 
+import {
+  IoLogoCss3,
+} from 'react-icons/io5';
+
 const allSkills = [
-  { name: 'HTML/CSS',     icon: SiHtml5       },
+  { name: 'HTML',         icon: SiHtml5       },
+  { name: 'CSS',          icon: IoLogoCss3    },
   { name: 'JavaScript',   icon: SiJavascript  },
   { name: 'React.js',     icon: FaReact       },
   { name: 'Next.js',      icon: SiNextdotjs   },
