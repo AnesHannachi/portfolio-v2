@@ -5,7 +5,7 @@ export default function About({ onContactClick }) {
     <section id="about" className="py-24 px-6 bg-[#05050f]">
       <div className="max-w-7xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold mb-16">À Propos</h2>
+        <h2 className="text-5xl font-extrabold mb-16">A Propos</h2>
 
         {/* Bento Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-max">
@@ -57,7 +57,7 @@ export default function About({ onContactClick }) {
                   className="flex items-center gap-3 text-sm text-[#e2e8f0] hover:text-[#3B82F6] transition-colors group"
                 >
                   <span className="w-6 h-6 rounded bg-[#1e2a4a] flex items-center justify-center text-xs group-hover:bg-[#3B82F6]/20">☎</span>
-                  <span>+213 67 517 1141</span>
+                  <span>+213 675 171 141</span>
                 </a>
                 <div className="flex items-center gap-3 text-sm text-[#e2e8f0]">
                   <span className="w-6 h-6 rounded bg-[#1e2a4a] flex items-center justify-center text-xs">📍</span>

@@ -39,7 +39,7 @@ const allSkills = [
 ];
 
 // Repeat 4 times for seamless infinite loop
-const loopedSkills = [...allSkills, ...allSkills, ...allSkills, ...allSkills];
+const loopedSkills = [...allSkills, ...allSkills, ...allSkills, ...allSkills, ...allSkills];
 
 function SkillItem({ skill, index }) {
   const Icon = skill.icon;
@@ -60,7 +60,7 @@ export default function Skills() {
   return (
     <section id="skills" className="py-4  overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 mb-16">
-        <h2 className="text-4xl font-bold text-white">
+        <h2 className="text-5xl font-bold text-white ">
           Mes compétences <span className="gradient-text">techniques</span>
         </h2>
       </div>

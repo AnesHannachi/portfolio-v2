@@ -1,9 +1,9 @@
-import { Inter } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 import './globals.css'
 
-const interFont = Inter({
+const interFont = Nunito({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-nunito',
   weight: ['400', '500', '600', '700'],
 })
 

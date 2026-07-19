@@ -48,7 +48,7 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto">
         {/* Section Title with accent */}
         <div className="mb-16">
-          <h2 className="text-4xl font-bold">
+          <h2 className="text-5xl font-bold">
             Une sélection de mes projets{' '}
             <span className="gradient-text">récents</span>
           </h2>

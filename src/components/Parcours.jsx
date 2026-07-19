@@ -12,17 +12,16 @@ const timelineEvents = [
   {
     date: '2023',
     title: 'Baccalauréat',
-    description: 'Lycée Smain Haroune, Koléa. Mention: Très Bien.',
+    description: 'Lycée Smain Haroune, Koléa. Mention: excellent.',
   },
 ];
 
 export default function Parcours() {
   return (
     <section id="parcours" className="py-24 px-6 bg-[#05050f]">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Section Title */}
-        <h2 className="text-4xl font-bold mb-16">Mon parcours</h2>
-
+        <h2 className="text-5xl font-bold mb-16">Mon parcours</h2>
         {/* Vertical Timeline */}
         <div className="relative">
           {/* Glowing timeline line */}

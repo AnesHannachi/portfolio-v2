@@ -33,7 +33,9 @@ export default function Navbar({ onContactClick }) {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between ">
         {/* Logo */}
-        <Link href="/" className="font-mono text-lg font-bold gradient-text">
+        {/* The logo is not working, it should be a link to the hero section*/}
+        {/*make it a link to the hero section*/}
+        <Link href="#hero" className="font-mono text-lg font-bold gradient-text">
           anes.dev
         </Link>
 

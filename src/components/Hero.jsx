@@ -37,7 +37,7 @@ export default function Hero() {
 
             {/* Main Heading */}
             <h1 className="text-5xl md:text-6xl leading-tight mb-8">
-              <span className="gradient-text font-bold  ">
+              <span className="gradient-text font-extrabold  ">
                 Transformer les idées en<br />
                 Expériences Utilisateur.
               </span>
