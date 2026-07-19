@@ -103,25 +103,17 @@ body {
   animation: pulse-glow 3s ease-in-out infinite;
 }
 
-/* ── Skills scrolling animations ── */
+/* ── Skills infinite scroll ── */
 @keyframes scroll-left {
   0%   { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-@keyframes scroll-right {
-  0%   { transform: translateX(-50%); }
-  100% { transform: translateX(0); }
+  100% { transform: translateX(-25%); }
+  /* 25% because we repeat the array 4 times → 1 full loop = 25% of total width */
 }
 
 .animate-scroll-left {
-  animation: scroll-left var(--duration, 30s) linear infinite;
+  animation: scroll-left var(--duration, 40s) linear infinite;
+  will-change: transform;
 }
-
-.animate-scroll-right {
-  animation: scroll-right var(--duration, 30s) linear infinite;
-}
-
 /* Pause au hover */
 /* .animate-scroll-left:hover,
 .animate-scroll-right:hover {
