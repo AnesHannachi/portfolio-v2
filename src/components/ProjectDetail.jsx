@@ -1,20 +1,66 @@
 'use client';
 
 import { ArrowUpRight } from 'lucide-react';
+import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
+import {
+  SiNextdotjs,
+  SiTailwindcss,
+  SiMongodb,
+  SiExpress,
+  SiLangchain,
+  SiJavascript,
+} from 'react-icons/si';
+import { TbApi } from 'react-icons/tb';
+import { FaDatabase } from 'react-icons/fa';
+
+// Map tech name → { icon, color }
+const techIcons = {
+  'Next.js':      { icon: SiNextdotjs,   color: '#ffffff' },
+  'React.js':     { icon: FaReact,       color: '#61DAFB' },
+  'Tailwind CSS': { icon: SiTailwindcss, color: '#38BDF8' },
+  'Node.js':      { icon: FaNodeJs,      color: '#6BBF47' },
+  'Express':      { icon: SiExpress,     color: '#ffffff' },
+  'MongoDB':      { icon: SiMongodb,     color: '#47A248' },
+  'Python':       { icon: FaPython,      color: '#3B82F6' },
+  'JavaScript':   { icon: SiJavascript,  color: '#F7DF1E' },
+  'LangChain':    { icon: SiLangchain,   color: '#1C3C3C' },
+  'LangGraph':    { icon: FaDatabase,    color: '#7C3AED' },
+  'LLM APIs':     { icon: TbApi,         color: '#F97316' },
+  'APIs':         { icon: TbApi,         color: '#F97316' },
+  'Discord API':  { icon: TbApi,         color: '#5865F2' },
+  'Telegram API': { icon: TbApi,         color: '#26A5E4' },
+  'Claude API':   { icon: TbApi,         color: '#F97316' },
+  'GPT-4':        { icon: TbApi,         color: '#10A37F' },
+  'JWT Auth':     { icon: TbApi,         color: '#FB923C' },
+  'API REST':     { icon: TbApi,         color: '#F97316' },
+};
+
+function TechBadge({ tech }) {
+  const entry = techIcons[tech];
+  const Icon = entry?.icon;
+  const color = entry?.color ?? '#94a3b8';
+
+  return (
+    <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10">
+      {Icon && <Icon style={{ color }} className="w-4 h-4 flex-shrink-0" />}
+      <span className="text-xs font-medium text-gray-300 whitespace-nowrap">{tech}</span>
+    </div>
+  );
+}
 
 const projectData = {
   esiflow: {
     title: 'ESIFLOW',
-    role: 'UI/UX Designer & Développeur Front-End',
-    type: 'Projet d\'équipe',
-    description: 'Plateforme web pour optimiser la gestion des équipements et des opérations de maintenance à l\'ESI.',
-    fullDescription: 'ESIFLOW est une plateforme web développée pour centraliser et simplifier la gestion des équipements et des opérations de maintenance au sein de l\'école. Elle permet aux administrateurs de suivre l\'état des équipements, de planifier les maintenances et d\'améliorer les workflows organisationnels.',
-    myRole: 'J\'ai conçu l\'interface utilisateur en mettant l\'accent sur l\'accessibilité et l\'expérience utilisateur, puis j\'ai développé les composants React et intégré la logique frontend pour garantir une expérience fluide.',
+    role: "UI/UX Designer & Développeur Front-End",
+    type: "Projet d'équipe",
+    description: "Plateforme web pour optimiser la gestion des équipements et des opérations de maintenance à l'ESI.",
+    fullDescription: "ESIFLOW est une plateforme web développée pour centraliser et simplifier la gestion des équipements et des opérations de maintenance au sein de l'école. Elle permet aux administrateurs de suivre l'état des équipements, de planifier les maintenances et d'améliorer les workflows organisationnels.",
+    myRole: "J'ai conçu l'interface utilisateur en mettant l'accent sur l'accessibilité et l'expérience utilisateur, puis j'ai développé les composants React et intégré la logique frontend pour garantir une expérience fluide.",
     stack: ['Next.js', 'React.js', 'Tailwind CSS', 'API REST'],
     impact: [
-      'Interface intuitive réduisant le temps d\'apprentissage des utilisateurs',
-      'Amélioration de 30% de l\'efficacité des workflows de maintenance',
-      'Tableau de bord en temps réel pour le suivi des équipements',
+      "Interface intuitive réduisant le temps d'apprentissage des utilisateurs",
+      "Amélioration de 30% de l'efficacité des workflows de maintenance",
+      "Tableau de bord en temps réel pour le suivi des équipements",
     ],
     github: 'https://github.com/AnesHannachi',
   },
@@ -23,8 +69,8 @@ const projectData = {
     role: 'Développeur Full-Stack (solo)',
     type: 'Projet personnel',
     description: 'Plateforme permettant aux étudiants ESI de calculer leurs moyennes et suivre leur progression via un dashboard avancé.',
-    fullDescription: 'ESI GRADE est une application complète permettant aux étudiants de gérer leurs notes académiques. Elle offre un système de calcul automatisé des moyennes, un historique détaillé et des visualisations graphiques pour suivre la progression académique.',
-    myRole: 'J\'ai développé l\'application de bout en bout, du backend (Node.js + Express) à la base de données (MongoDB) et le frontend (Next.js), implémentant des algorithmes de calcul complexes et une interface responsive.',
+    fullDescription: "ESI GRADE est une application complète permettant aux étudiants de gérer leurs notes académiques. Elle offre un système de calcul automatisé des moyennes, un historique détaillé et des visualisations graphiques pour suivre la progression académique.",
+    myRole: "J'ai développé l'application de bout en bout, du backend (Node.js + Express) à la base de données (MongoDB) et le frontend (Next.js), implémentant des algorithmes de calcul complexes et une interface responsive.",
     stack: ['Next.js', 'Node.js', 'Express', 'MongoDB', 'JWT Auth'],
     impact: [
       'Plus de 50 étudiants utilisant la plateforme',
@@ -38,13 +84,13 @@ const projectData = {
     role: 'Développeur (solo)',
     type: 'Projet personnel',
     description: 'Chatbots pour les événements du CSE (DataHack, InnovDigitale, CCC) pour guider les participants et automatiser les flux de travail.',
-    fullDescription: 'Ensemble de chatbots intelligents développés pour automatiser la gestion des événements du Club Scientifique. Ces bots guident les participants, répondent aux questions fréquentes et collectent les inscriptions.',
-    myRole: 'J\'ai conçu et développé les architectures des bots, implémenté la logique de conversation et créé des intégrations avec les systèmes d\'enregistrement.',
+    fullDescription: "Ensemble de chatbots intelligents développés pour automatiser la gestion des événements du Club Scientifique. Ces bots guident les participants, répondent aux questions fréquentes et collectent les inscriptions.",
+    myRole: "J'ai conçu et développé les architectures des bots, implémenté la logique de conversation et créé des intégrations avec les systèmes d'enregistrement.",
     stack: ['Python', 'JavaScript', 'Discord API', 'Telegram API'],
     impact: [
-      'Automatisation complète du processus d\'inscription pour 3 événements',
+      "Automatisation complète du processus d'inscription pour 3 événements",
       'Support utilisateur 24/7 via les bots',
-      'Amélioration significative de l\'expérience participant',
+      "Amélioration significative de l'expérience participant",
     ],
     github: 'https://github.com/AnesHannachi',
   },
@@ -53,11 +99,11 @@ const projectData = {
     role: 'Développeur des fonctions agents',
     type: 'Projet académique',
     description: 'Architecture multi-agents IA basée sur des LLMs capable de réparer et maintenir du code de manière autonome.',
-    fullDescription: 'The Refactoring Swarm est un système innovative utilisant une architecture multi-agents IA. Chaque agent spécialisé (analyseur, refactoriseur, testeur) travaille ensemble pour améliorer et maintenir du code source de manière autonome.',
-    myRole: 'J\'ai développé les fonctions d\'orchestration des agents, implémenté la logique de communication inter-agents et créé les pipelines d\'analyse de code avec LangChain et LangGraph.',
+    fullDescription: "The Refactoring Swarm est un système innovant utilisant une architecture multi-agents IA. Chaque agent spécialisé (analyseur, refactoriseur, testeur) travaille ensemble pour améliorer et maintenir du code source de manière autonome.",
+    myRole: "J'ai développé les fonctions d'orchestration des agents, implémenté la logique de communication inter-agents et créé les pipelines d'analyse de code avec LangChain et LangGraph.",
     stack: ['Python', 'LangChain', 'LangGraph', 'Claude API', 'GPT-4'],
     impact: [
-      'Prototype fonctionnel d\'un système multi-agents autonome',
+      "Prototype fonctionnel d'un système multi-agents autonome",
       'Analyse et refactorisation automatisée de 1000+ lignes de code',
       'Démonstration réussie lors de présentations académiques',
     ],
@@ -103,19 +149,17 @@ export default function ProjectDetail({ slug }) {
 
         {/* Hero Section */}
         <div className="mb-12">
-          {/* Image Placeholder */}
           <div className="w-full aspect-video bg-[#0f0f23] border-2 border-[#1e1e3f] rounded-xl flex items-center justify-center mb-8">
-            <span className="text-muted text-center">
+            <span className="text-center">
               <div className="text-5xl mb-3">🖼️</div>
-              <p className="text-sm">[image projet large]</p>
+              <p className="text-sm text-gray-500">[image projet large]</p>
             </span>
           </div>
 
-          {/* Title and Badges */}
-          <h1 className="text-5xl md:text-6xl font-bold text-gradient mb-4">{project.title}</h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-[#e2e8f0] mb-4">{project.title}</h1>
           <div className="flex flex-wrap gap-3 mb-6">
-            <span className="badge-role">{project.role}</span>
-            <span className="badge-role">{project.type}</span>
+            <span className="px-3 py-1 rounded-full text-sm bg-white/5 border border-white/10 text-gray-300">{project.role}</span>
+            <span className="px-3 py-1 rounded-full text-sm bg-blue-500/10 border border-blue-500/20 text-blue-400">{project.type}</span>
           </div>
         </div>
 
@@ -123,48 +167,44 @@ export default function ProjectDetail({ slug }) {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           {/* Main Content */}
           <div className="md:col-span-2 space-y-12">
-            {/* À propos du projet */}
+
             <section>
               <h2 className="text-2xl font-bold text-[#e2e8f0] mb-4 flex items-center gap-2">
-                <span className="w-1 h-8 bg-[#3B82F6]"></span>
+                <span className="w-1 h-8 bg-[#3B82F6] rounded-full"></span>
                 À propos du projet
               </h2>
-              <p className="text-muted leading-relaxed text-lg">{project.fullDescription}</p>
+              <p className="text-gray-400 leading-relaxed text-lg">{project.fullDescription}</p>
             </section>
 
-            {/* Mon rôle */}
             <section>
               <h2 className="text-2xl font-bold text-[#e2e8f0] mb-4 flex items-center gap-2">
-                <span className="w-1 h-8 bg-[#3B82F6]"></span>
+                <span className="w-1 h-8 bg-[#3B82F6] rounded-full"></span>
                 Mon rôle
               </h2>
-              <p className="text-muted leading-relaxed text-lg">{project.myRole}</p>
+              <p className="text-gray-400 leading-relaxed text-lg">{project.myRole}</p>
             </section>
 
-            {/* Stack Tech */}
+            {/* Stack with colored icons */}
             <section>
               <h2 className="text-2xl font-bold text-[#e2e8f0] mb-4 flex items-center gap-2">
-                <span className="w-1 h-8 bg-[#3B82F6]"></span>
+                <span className="w-1 h-8 bg-[#3B82F6] rounded-full"></span>
                 Stack technique
               </h2>
               <div className="flex flex-wrap gap-3">
                 {project.stack.map((tech) => (
-                  <span key={tech} className="badge-accent">
-                    {tech}
-                  </span>
+                  <TechBadge key={tech} tech={tech} />
                 ))}
               </div>
             </section>
 
-            {/* Résultats & Impact */}
             <section>
               <h2 className="text-2xl font-bold text-[#e2e8f0] mb-4 flex items-center gap-2">
-                <span className="w-1 h-8 bg-[#3B82F6]"></span>
+                <span className="w-1 h-8 bg-[#3B82F6] rounded-full"></span>
                 Résultats & impact
               </h2>
               <ul className="space-y-3">
                 {project.impact.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-muted">
+                  <li key={item} className="flex items-start gap-3 text-gray-400">
                     <span className="text-[#3B82F6] font-bold mt-1">✓</span>
                     <span className="leading-relaxed">{item}</span>
                   </li>
@@ -172,18 +212,17 @@ export default function ProjectDetail({ slug }) {
               </ul>
             </section>
 
-            {/* Screenshots */}
             <section>
               <h2 className="text-2xl font-bold text-[#e2e8f0] mb-4 flex items-center gap-2">
-                <span className="w-1 h-8 bg-[#3B82F6]"></span>
+                <span className="w-1 h-8 bg-[#3B82F6] rounded-full"></span>
                 Aperçus
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[1, 2, 3].map((i) => (
-                  <div key={i} className="aspect-video bg-[#0f0f23] border-2 border-[#1e1e3f] rounded-lg flex items-center justify-center">
-                    <span className="text-muted text-center">
+                  <div key={i} className="aspect-video bg-[#0f0f23] border border-[#1e1e3f] rounded-lg flex items-center justify-center">
+                    <span className="text-center">
                       <div className="text-3xl mb-2">📸</div>
-                      <p className="text-xs">[screenshot {i}]</p>
+                      <p className="text-xs text-gray-600">[screenshot {i}]</p>
                     </span>
                   </div>
                 ))}
@@ -195,7 +234,7 @@ export default function ProjectDetail({ slug }) {
           <div className="md:col-span-1">
             <div className="glass rounded-lg p-6 sticky top-24 space-y-6">
               <div>
-                <h3 className="text-sm font-bold text-muted mb-3 uppercase tracking-wide">Lien du projet</h3>
+                <h3 className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide">Lien du projet</h3>
                 <a
                   href={project.github}
                   target="_blank"
@@ -213,22 +252,20 @@ export default function ProjectDetail({ slug }) {
               </div>
 
               <div className="pt-6 border-t border-[#1e1e3f]">
-                <h3 className="text-sm font-bold text-muted mb-3 uppercase tracking-wide">Type</h3>
+                <h3 className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide">Type</h3>
                 <p className="text-[#e2e8f0]">{project.type}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-bold text-muted mb-3 uppercase tracking-wide">Rôle</h3>
+                <h3 className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide">Rôle</h3>
                 <p className="text-[#e2e8f0] text-sm">{project.role}</p>
               </div>
 
               <div>
-                <h3 className="text-sm font-bold text-muted mb-3 uppercase tracking-wide">Technologies</h3>
+                <h3 className="text-sm font-bold text-gray-500 mb-3 uppercase tracking-wide">Technologies</h3>
                 <div className="flex flex-wrap gap-2">
-                  {project.stack.slice(0, 4).map((tech) => (
-                    <span key={tech} className="badge-accent text-xs">
-                      {tech}
-                    </span>
+                  {project.stack.map((tech) => (
+                    <TechBadge key={tech} tech={tech} />
                   ))}
                 </div>
               </div>
