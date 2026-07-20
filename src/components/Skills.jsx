@@ -45,7 +45,7 @@ const allSkills = [
   { name: 'LangGraph',    icon: FaDatabase    },
 ];
 
-// Repeat 4 times for seamless infinite loop
+// Repeat 5 times for seamless infinite loop
 const loopedSkills = [...allSkills, ...allSkills, ...allSkills, ...allSkills, ...allSkills];
 
 function SkillItem({ skill, index }) {

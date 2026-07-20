@@ -89,7 +89,7 @@ export default function ProjectDetail({ slug }) {
 
   return (
     <div className="min-h-screen py-20 md:py-28 px-6 md:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-6xl mx-auto">
         {/* Back Link */}
         <a href="/#projects" className="group inline-flex items-center text-[#3B82F6] hover:text-[#2563EB] transition-colors mb-8">
           <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">

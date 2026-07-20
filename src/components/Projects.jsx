@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
+
 const projects = [
   {
     slug: 'esiflow',
@@ -93,34 +94,35 @@ export default function Projects() {
                 </div>
 
                 {/* Links */}
-                <div className="flex gap-3">
-                  <Link
-                    href={`/projects/${project.slug}`}
-                    className="group flex-1 btn-primary text-center text-sm inline-flex items-center justify-center"
-                  >
-                    <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
-                      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-                    </span>
-                    <span>Voir le détail</span>
-                    <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
-                      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-                    </span>
-                  </Link>
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="group flex-1 px-4 py-2 border border-gray-400 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 text-sm inline-flex items-center justify-center"
-                  >
-                    <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
-                      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-                    </span>
-                    <span>GitHub</span>
-                    <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
-                      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-                    </span>
-                  </a>
-                </div>
+<div className="flex gap-5">
+  <Link
+    href={`/projects/${project.slug}`}
+    className="group/detail flex-1 btn-primary text-center text-sm inline-flex items-center justify-center"
+  >
+    <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover/detail:w-5 group-hover/detail:opacity-100 group-hover/detail:translate-x-0 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+    <span>Voir le détail</span>
+    <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover/detail:w-0 group-hover/detail:opacity-0 group-hover/detail:translate-x-2 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+  </Link>
+
+  <Link
+    href={project.github}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="group/github flex-1 px-4 py-2 border border-gray-400 text-gray-300 rounded-lg hover:border-blue-500 hover:text-blue-400 transition-all duration-300 text-sm inline-flex items-center justify-center"
+  >
+    <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover/github:w-5 group-hover/github:opacity-100 group-hover/github:translate-x-0 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+    <span>GitHub</span>
+    <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover/github:w-0 group-hover/github:opacity-0 group-hover/github:translate-x-2 transition-all duration-300 overflow-hidden">
+      <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+    </span>
+  </Link>
+</div>
               </div>
             </div>
           ))}
