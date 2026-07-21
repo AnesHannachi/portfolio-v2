@@ -1,7 +1,9 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useLayoutEffect, useRef } from 'react';
 import Link from 'next/link';
+import { gsap } from 'gsap';
+import { GoArrowUpRight } from 'react-icons/go';
 
 export default function Navbar({ onContactClick }) {
   const [isOpen, setIsOpen] = useState(false);
