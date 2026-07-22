@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
-import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
+import { FaReact, FaNodeJs, FaPython, FaGitAlt, FaGithub } from 'react-icons/fa';
 import {
   SiNextdotjs,
   SiTailwindcss,
@@ -35,8 +35,8 @@ const projects = [
     slug: 'esiflow',
     title: 'ESIFLOW',
     role: 'UI/UX Designer & Développeur Front-End',
-    type: "Projet d'équipe",
-    description: "Plateforme web pour optimiser la gestion des équipements et des opérations de maintenance à l'ESI.",
+    type: 'Projet d\'équipe',
+    description: 'Plateforme web pour optimiser la gestion des équipements et des opérations de maintenance à l\'ESI.',
     stack: ['Next.js', 'React.js', 'Tailwind CSS'],
     github: 'https://github.com/AnesHannachi',
   },
@@ -102,22 +102,25 @@ export default function Projects() {
               className="glass rounded-2xl overflow-hidden group card-scale"
             >
               {/* Image Placeholder */}
-              <div className="relative w-full rounded-t-2xl overflow-hidden">
+              <div className="relative w-full bg-gray-900 rounded-t-2xl overflow-hidden">
                 <div className="aspect-video flex items-center justify-center bg-gray-950 relative">
                   <div className="text-center">
                     <div className="text-4xl mb-2">📸</div>
                     <p className="text-xs text-gray-600">[ screenshot projet ]</p>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-gray-950 to-transparent opacity-40" />
+                  <div className="absolute bottom-0 left-0 right-0 h-12 bg-linear-to-t from-gray-950 to-transparent opacity-40" />
                 </div>
               </div>
 
               {/* Content */}
               <div className="p-6">
+                {/* Title */}
                 <h3 className="text-xl font-bold mb-3">{project.title}</h3>
+
+                {/* Description */}
                 <p className="text-gray-400 text-sm mb-6">{project.description}</p>
 
-                {/* Tech Stack */}
+                {/* Tech Stack — icons + names */}
                 <div className="flex flex-wrap gap-2 mb-6">
                   {project.stack.map((tech) => (
                     <TechBadge key={tech} tech={tech} />

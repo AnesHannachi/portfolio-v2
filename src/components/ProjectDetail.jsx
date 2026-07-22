@@ -1,5 +1,8 @@
 'use client';
 
+import { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import ContactModal from '@/components/ContactModal';
 import { ArrowUpRight } from 'lucide-react';
 import { FaReact, FaNodeJs, FaPython } from 'react-icons/fa';
 import {
@@ -112,29 +115,29 @@ const projectData = {
 };
 
 export default function ProjectDetail({ slug }) {
+  const [isContactOpen, setIsContactOpen] = useState(false);
   const project = projectData[slug];
 
-  if (!project) {
-    return (
-      <div className="min-h-screen pt-32 px-6 md:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl font-bold text-[#e2e8f0] mb-4">Projet non trouvé</h1>
-          <a href="/#projects" className="group btn-primary inline-flex items-center justify-center">
-            <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
-              <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-            </span>
-            <span>Retour aux projets</span>
-            <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
-              <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
-            </span>
-          </a>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="min-h-screen py-20 md:py-28 px-6 md:px-8">
+    <main className="min-h-screen bg-[#05050f] text-white">
+      <Navbar onContactClick={() => setIsContactOpen(true)} />
+      {!project ? (
+        <div className="min-h-screen pt-32 px-6 md:px-8">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="text-4xl font-bold text-[#e2e8f0] mb-4">Projet non trouvé</h1>
+            <a href="/#projects" className="group btn-primary inline-flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+              </span>
+              <span>Retour aux projets</span>
+              <span className="inline-flex items-center justify-center w-5 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
+                <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+              </span>
+            </a>
+          </div>
+        </div>
+      ) : (
+        <div className="min-h-screen py-20 md:py-28 px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
         {/* Back Link */}
         <a href="/#projects" className="group inline-flex items-center text-[#3B82F6] hover:text-[#2563EB] transition-colors mb-8">
@@ -273,6 +276,9 @@ export default function ProjectDetail({ slug }) {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      )}
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+    </main>
   );
 }
