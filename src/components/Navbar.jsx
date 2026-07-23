@@ -180,19 +180,19 @@ export default function Navbar({ onContactClick }) {
                   onContactClick();
                 }
               }}
-              className="group btn-primary inline-flex items-center justify-center">
-              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+              className="group btn-primary !text-md !px-3 !py-1.5 !gap-1 inline-flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
               </span>
               <span>Contact</span>
               <span className="inline-flex items-center justify-center w-4 opacity-100 translate-x-0 group-hover:w-0 group-hover:opacity-0 group-hover:translate-x-2 transition-all duration-300 overflow-hidden">
-                <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
+                <ArrowUpRight className="w-3.5 h-3.5" strokeWidth={2.5} />
               </span>
             </a>
             </div>
           </div>
 
-          {/* MOBILE HEADER (md:hidden): Left Hamburger | Center Logo | Right Contact */}
+          {/* MOBILE HEADER (md:hidden): Left Hamburger | Center Contact | Right Logo */}
           <div className="flex md:hidden items-center justify-between w-full relative">
             {/* Left: Hamburger Menu Icon */}
             <div
@@ -220,27 +220,8 @@ export default function Navbar({ onContactClick }) {
               />
             </div>
 
-            {/* Center: Logo (Centered) */}
+            {/* Center: Contact CTA Button (Centered) */}
             <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-              <Link href="#hero" className="font-mono text-base font-bold gradient-text">
-                anes.dev
-              </Link>
-            </div>
-
-            {/* Right: Contact CTA Button */}
-            {/* <a
-              href="#contact"
-              onClick={(e) => {
-                if (onContactClick) {
-                  e.preventDefault();
-                  onContactClick();
-                }
-              }}
-              className="btn-primary text-xs font-semibold px-3.5 py-1.5 rounded-lg text-white"
-            >
-              Contact
-            </a> */}
-            
               <a href="#contact"
               onClick={(e) => {
                 if (onContactClick) {
@@ -248,8 +229,8 @@ export default function Navbar({ onContactClick }) {
                   onContactClick();
                 }
               }}
-              className="group btn-primary inline-flex items-center justify-center">
-              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-5 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
+              className="group btn-primary !text-md !px-3 !py-1.5 !gap-1 inline-flex items-center justify-center">
+              <span className="inline-flex items-center justify-center w-0 opacity-0 -translate-x-2 group-hover:w-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 overflow-hidden">
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
               </span>
               <span>Contact</span>
@@ -257,6 +238,12 @@ export default function Navbar({ onContactClick }) {
                 <ArrowUpRight className="w-4 h-4" strokeWidth={2.5} />
               </span>
             </a>
+            </div>
+
+            {/* Right: Logo */}
+            <Link href="#hero" className="font-mono text-base font-bold gradient-text">
+              anes.dev
+            </Link>
           </div>
 
         </div>
