@@ -31,7 +31,7 @@ export default function Hero() {
           {/* Left: Text */}
           <div>
             {/* Label */}
-            <p className="text-sm font-mono text-gray-400 mb-6">
+            <p className="text-sm font-mono text-gray-400 mb-6 mt-15">
               // Développeur Web basé en Algérie
             </p>
 
